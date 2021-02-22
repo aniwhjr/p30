@@ -6,7 +6,7 @@ class SlingShot {
       stiffness: 0.04,
       length: 10,
     };
-    
+
     this.SlingShot = Constraint.create(options);
     this.pointB = pointB;
     World.add(world, this.SlingShot);
@@ -14,6 +14,10 @@ class SlingShot {
 
   fly() {
     this.SlingShot.bodyA = null;
+  }
+
+  attach(bodyA) {
+    this.SlingShot.bodyA = bodyA;
   }
 
   display() {

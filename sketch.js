@@ -44,9 +44,9 @@ function setup() {
   box24 = new Box(1035, 140, 40, 60);
   box25 = new Box(995, 80, 40, 60);
 
-  mainBox = new Rock(100, 200, 25, 25);
+  mainBox = new Rock(100, 300, 40, 40);
 
-  slingshot = new SlingShot(mainBox.body, { x: 50, y: 100 });
+  slingshot = new SlingShot(mainBox.body, { x: 120, y: 300 });
 }
 
 function draw() {
@@ -86,6 +86,12 @@ function draw() {
   slingshot.display();
 
   drawSprites();
+}
+
+function keyPressed() {
+  if (keyCode === 32) {
+    slingshot.attach(mainBox.body)
+  }
 }
 
 function mouseDragged() {
